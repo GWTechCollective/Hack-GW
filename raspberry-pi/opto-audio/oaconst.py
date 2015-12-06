@@ -1,0 +1,12 @@
+# Serial Options
+BAUD_RATE = 115200
+
+# Instrument Options
+NOTE_OFFSET = 36
+
+# MIDI Codes
+DEVICE_ID = 3
+STATUS_GOOD = 144
+MODE_CHANGE = 176
+MIDI_NOTE_DOWN = 84
+MIDI_NOTE_UP = 0
