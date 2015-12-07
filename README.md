@@ -3,11 +3,15 @@ A MIDI-keyboard controlled LED light show to accompany musical performances.
 
 ## Arduino
 
-The provided arduino code sets up a serial monitor to listen for values sent by the computer parsing the MIDI commands, in this case a Raspberry Pi.
+The provided Arduino code sets up a serial monitor to listen for values sent by the computer parsing the MIDI commands, in this case a Raspberry Pi. It then determines the R,G,B values to assign based on which key is pressed and uses PWM to control the LEDs. 
 
 ### Installation
 
 Simply upload the Arduino sketch provided in the Arduino folder using the Arduino IDE.
+
+### Circuit
+
+An LED driver circuit is required to control the RGB LED strip running at 12V with the Arduino Uno, which runs at 5V. The basic circuit used can be found at https://learn.adafruit.com/rgb-led-strips/usage. For this implementation, we used a 12V, 5A power supply connected directly to the LED strip. *Do not connect through the Vin pin on the Arduino as shown in the diagram if you will be pulling more than 1A as this may damage the Arduino.* Assume roughly 1A per meter to be safe.
 
 ## Raspberry Pi
 
