@@ -36,7 +36,12 @@ void loop() {
   brightness = MAX_BRIGHTNESS;
   
   // Color spectrum divided into 5 ranges, then broken up based on the number of keys  
-  if( key <= FIFTH ) {                           // Magenta (255-0-255) to Red (255-0-0)
+  if( key < 0 || key > 5*FIFTH ) {
+    r = 0;
+    g = 0;
+    b = 0;
+  }
+  else if( key <= FIFTH ) {                      // Magenta (255-0-255) to Red (255-0-0)
     r = brightness - brightness*(key/FIFTH);
     g = 0;
     b = brightness;
@@ -61,11 +66,6 @@ void loop() {
     g = brightness - brightness*((key-4*FIFTH)/FIFTH);
     b = 0;  
   } 
-  else {
-    r = 0;
-    g = 0;
-    b = 0;
-  }
   
   // PWM to control RGB
   analogWrite(RED, r);
